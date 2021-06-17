@@ -15,7 +15,7 @@ export function Home() {
    const [tasks, setTasks] = useState<Task[]>([]);
 
   function handleAddTask(newTaskTitle: string) {
-    if(newTaskTitle !== '') {
+    if(newTaskTitle !== '' && newTaskTitle.replace(/ /g,'').length > 0) {
       const newTask: Task = {
         id: new Date().getTime(),
         title: newTaskTitle,
